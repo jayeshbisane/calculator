@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            calculator
+        </title>
+        <style>
+            .calculator-container{
+                background-color: black;
+                width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 50px;
+                border-radius: 20px;
+                padding: 10px;
+                padding-bottom: 50px;
+            }
+            .calculator-screen{
+                font-size: 120px;
+                width: 350px;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10px;
+                padding: 5px;
+                background-color: gray;
+                margin-bottom: 20px;
+                border-radius: 20px;
+            }
+            .button-row{
+                display: flex;
+                justify-content:space-evenly;
+                margin-top:15px;
+            }
+            .cal-button{
+                font-size: 40px;
+                height: 60px;
+                width: 75px;
+                border-radius: 40px;
+                border: none;
+                cursor: pointer;
+                border: 1px solid black;
+                font-family: algerian;
+                background-color: gray;
+                color: white;
+            }
+            .cal-button:hover
+            {
+                box-shadow: 0 0 1px 0.5px white;
+                border: 2px solid black;
+            }
+            .bg-tomato{
+                background-color: darkblue;
+                color: white;
+            }
+            .text{
+                font-size: 22px;
+            }
+            .ext{
+                background-color: green;
+                color: aquamarine;
+            }
+            .har{
+                background-color: blue;
+                color: white;
+            }
+            .brand-name{
+                color: beige;
+                text-align: right;
+                margin-right: 20px;
+                font-size: 18px;
+            }
+            body
+            {
+                background-color: blanchedalmond;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="calculator-container">
+            <p class="brand-name">jayesh</p>
+        <input type="text" id="input" class="calculator-screen"/>
+
+        <div class="button-row">
+            <button class="cal-button ext" onclick="handkeypress('AC')">AC</button>
+            <button class="cal-button bg-tomato" onclick="handkeypress('()')">()</button>
+            <button class="cal-button bg-tomato" onclick="handkeypress('%')">%</button>
+            <button class="cal-button bg-tomato" onclick="handkeypress('/')">/</button>
+        </div>
+        <div class="button-row">
+            <button class="cal-button" onclick="handkeypress('7')">7</button>
+            <button class="cal-button" onclick="handkeypress('8')">8</button>
+            <button class="cal-button" onclick="handkeypress('9')">9</button>
+            <button class="cal-button bg-tomato" onclick="handkeypress('*')">x</button>
+        </div>
+        <div class="button-row">
+            <button class="cal-button" onclick="handkeypress('4')">4</button>
+            <button class="cal-button" onclick="handkeypress('5')">5</button>
+            <button class="cal-button" onclick="handkeypress('6')">6</button>
+            <button class="cal-button bg-tomato" onclick="handkeypress('-')">-</button>
+        </div>
+        <div class="button-row">
+            <button class="cal-button" onclick="handkeypress('1')">1</button>
+            <button class="cal-button" onclick="handkeypress('2')">2</button>
+            <button class="cal-button" onclick="handkeypress('3')">3</button>
+            <button class="cal-button bg-tomato" onclick="handkeypress('+')">+</button>
+        </div>
+        <div class="button-row">
+            <button class="cal-button" onclick="handkeypress('0')">0</button>
+            <button class="cal-button" onclick="handkeypress('.')">.</button>
+            <button class="cal-button text" onclick="handkeypress('back')">back</button>
+            <button class="cal-button har" onclick="handkeypress('=')">=</button>
+        </div>
+        </div>
+
+        <script>
+            function handkeypress(key)
+        {
+            const inputscreen = document.getElementById('input');
+            if(key=='=')
+             {
+                inputscreen.value = eval(inputscreen.value);  
+             }
+             else if(key=='AC')
+             {
+                inputscreen.value = '';
+             }
+             else if(key=='back')
+             {
+                inputscreen.value -=1;
+             }
+            else
+              {              
+                inputscreen.value += key;                
+              }
+              
+        }
+           
+        </script>
+    </body>
+</html>
